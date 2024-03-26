@@ -6,7 +6,7 @@
 import { useState, useEffect} from "react";
 import { URLObject } from "../../types/URLObject";
 import { useQuery } from "@tanstack/react-query";
-import { localHostEndPoint } from "../../endpoints";
+import { awsEndPoint } from "../../endpoints";
 // awsEndPoint
 const ImageGallery = () => {
   const [imageIndex, setImageIndex] = useState(0);
@@ -21,7 +21,7 @@ const ImageGallery = () => {
   }
 
   const getImages = async (): Promise<URLObject[]> => {
-    const imgURLs = (await fetch(localHostEndPoint)).json()
+    const imgURLs = (await fetch(awsEndPoint)).json()
     return formatImageNames(await imgURLs)
   }
 
