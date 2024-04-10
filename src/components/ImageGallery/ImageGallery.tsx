@@ -12,12 +12,12 @@ const ImageGallery = () => {
   const [imageIndex, setImageIndex] = useState(0);
   const formatImageNames = (urls: URLObject[]): URLObject[] => {
     const separators = /[._]|jpg/g; 
-      const formattedImgNames: URLObject[] = urls.map((url) => {
-        url.key = url.key?.split(separators).join(" ")
-        return url;
-      })
+    const formattedImgNames: URLObject[] = urls.map((url) => {
+      url.key = url.key?.split(separators).join(" ")
+      return url;
+    })
 
-      return formattedImgNames;
+    return formattedImgNames;
   }
 
   const getImages = async (): Promise<URLObject[]> => {
